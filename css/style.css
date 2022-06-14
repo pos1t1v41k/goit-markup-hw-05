@@ -10,6 +10,9 @@
    --card-gap: 30px;
    --icon-color: rgba(175, 177, 184, 1);
    --icon-bg-color: rgba(255, 255, 255, 0.1);
+   --transition-duration: 250ms;
+   --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+   --background-card-color: rgba(33, 150, 243, 0.9);
 }
 
 .body {
@@ -114,7 +117,8 @@ p {
    text-decoration: none;
    padding-top: 32px;
    padding-bottom: 32px;
-
+   transition-duration: var(--transition-duration);
+   transition-timing-function: var(--transition-timing-function);
 }
 
 .header-link:hover,
@@ -160,7 +164,8 @@ p {
    color: var(--primary-text-color);
    text-decoration: none;
    align-items: center;
-
+   transition-duration: var(--transition-duration);
+   transition-timing-function: var(--transition-timing-function);
 }
 
 
@@ -237,6 +242,8 @@ p {
    text-align: center;
    display: inline-block;
    letter-spacing: 0.06em;
+   transition-duration: var(--transition-duration);
+   transition-timing-function: var(--transition-timing-function);
 
 
 }
@@ -353,12 +360,38 @@ p {
 
 }
 
+
+
 .exercise-list {
    display: flex;
 }
 
 .exercise-list-item {
    margin-left: 30px;
+   position: relative;
+}
+
+.exercise-text {
+   color: var(--primary-white-color);
+   font-style: normal;
+   font-weight: 700;
+   font-size: 14px;
+   line-height: 16px;
+   text-align: center;
+   letter-spacing: 0.03em;
+   text-transform: uppercase;
+   position: absolute;
+   bottom: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0;
+   padding: 0;
+   height: 70px;
+   width: 100%;
+   background-image: linear-gradient(rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8));
+
+
 }
 
 /* наша команда*/
@@ -432,6 +465,8 @@ p {
    border-radius: 50%;
    justify-content: center;
    align-items: center;
+   transition-duration: var(--transition-duration);
+   transition-timing-function: var(--transition-timing-function);
 
 }
 
@@ -489,12 +524,15 @@ p {
    border: 1px solid var(--icon-color);
    border-radius: 4px;
    color: var(--icon-color);
+   transition-duration: var(--transition-duration);
+   transition-timing-function: var(--transition-timing-function);
 }
 
 .client-link:hover,
 .client-link:focus {
    color: var(--accent-color);
    border-color: var(--accent-color);
+
 }
 
 .icon-client {
@@ -538,6 +576,8 @@ p {
    letter-spacing: 0.03em;
    display: block;
    margin-bottom: 9px;
+   transition-duration: var(--transition-duration);
+   transition-timing-function: var(--transition-timing-function);
 }
 
 .adres-footer:hover,
@@ -553,6 +593,8 @@ p {
    line-height: 1.7;
    letter-spacing: 0.03em;
    display: block;
+   transition-duration: var(--transition-duration);
+   transition-timing-function: var(--transition-timing-function);
 
 }
 
@@ -603,6 +645,8 @@ p {
    justify-content: center;
    align-items: center;
    background-color: var(--icon-bg-color);
+   transition-duration: var(--transition-duration);
+   transition-timing-function: var(--transition-timing-function);
 }
 
 .column-link:hover,
@@ -650,6 +694,8 @@ p {
    border-radius: 4px;
    padding: 6px 22px;
    border: none;
+   transition-duration: var(--transition-duration);
+   transition-timing-function: var(--transition-timing-function);
 }
 
 .button-service:hover,
@@ -684,6 +730,39 @@ p {
 
 }
 
+.card-thumb {
+   position: relative;
+   overflow: hidden;
+}
+
+.card-animation {
+   transform: translateY(100%);
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: var(--background-card-color);
+   transition: 250ms var(--transition-timing-function);
+}
+
+.card-overlay {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.card-text-overlay {
+   font-style: normal;
+   font-weight: 400;
+   font-size: 18px;
+   line-height: 28px;
+   letter-spacing: 0.03em;
+   color: var(--primary-white-color);
+   min-width: 322px;
+}
+
 .catalog-text {
    font-size: 16px;
    line-height: 1.85;
@@ -707,3 +786,5 @@ p {
    text-decoration: none;
    display: block;
 }
+
+/*----card animation----*/
