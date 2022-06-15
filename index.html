@@ -20,9 +20,9 @@
       <nav class="main-nav">
          <a href="index.html" class="text-logo">Web<span class="Part-logo-black">Studio</span></a>
          <ul class="link-nav , list-style">
-            <li class="link-nav-item"><a class="header-link current" href="">Студия</a></li>
-            <li class="link-nav-item"><a class="header-link current-clean" href="./portfolio.html">Портфолио</a></li>
-            <li class="link-nav-item"><a class="header-link current-clean" href="">Контакты</a></li>
+            <li class="link-nav-item"><a class="header-link , current" href="">Студия</a></li>
+            <li class="link-nav-item"><a class="header-link " href="./portfolio.html">Портфолио</a></li>
+            <li class="link-nav-item"><a class="header-link " href="">Контакты</a></li>
          </ul>
       </nav>
       <ul class="contact-header list-style">
@@ -43,7 +43,7 @@
       <section class="hero overlay">
       <div class="container">
          <h1 class="title">эффективные решения для вашего бизнеса</h1>
-         <button class="button-title" type="button">Заказать услугу</button>
+         <button data-modal-open type="button" class="button-title">Заказать услугу</button>
       </div>
       </section>
       <Section class="features">
@@ -272,6 +272,16 @@
       </div>
       </address>
    </footer>
+   <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+         <button data-modal-close type="button" class="modal-button">
+            <svg class="modal-icon">
+               <use href="./img/across.svg#icon-across"></use>
+            </svg>
+         </button>
+         <script src="./js/modal.js"></script>
+      </div>
+   </div>
 </body>
 
 </html>
